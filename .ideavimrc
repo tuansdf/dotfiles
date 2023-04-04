@@ -1,0 +1,42 @@
+""" https://www.cyberwizard.io/posts/the-ultimate-ideavim-setup/
+
+set ideajoin
+set scrolloff=10
+set linenumber
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+let mapleader = " "
+
+set surround
+set highlightedyank
+set nerdtree
+set which-key
+
+" Open NERDTree (use q to exit)
+map <leader>x :NERDTreeToggle<CR>
+
+" Folding
+map <leader>zc :action CollapseAllRegions<CR>
+map <leader>zo :action ExpandAllRegions<CR>
+
+" Window splits
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+" File navigation
+map <leader>ff <action>(GotoFile)
+map <leader>fr <action>(RecentFiles)
+map <leader>fc <action>(FindInPath)
+map <leader><leader> <Action>(RecentFiles)
+map <leader>fl <action>(RecentLocations)
+map <leader>fs <action>(NewScratchFile)
