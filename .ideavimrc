@@ -17,8 +17,10 @@ let mapleader = " "
 
 set surround
 set highlightedyank
+set sneak
 set nerdtree
 set which-key
+set notimeout
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
