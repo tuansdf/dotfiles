@@ -27,6 +27,7 @@ return {
         "black",
         "isort",
         "flake8",
+        "eslint-lsp",
       })
     end,
   },
@@ -57,6 +58,7 @@ return {
                 includeInlayPropertyDeclarationTypeHints = false,
                 includeInlayFunctionLikeReturnTypeHints = true,
                 includeInlayEnumMemberValueHints = true,
+                importModuleSpecifierPreference = "non-relative",
               },
             },
             javascript = {
@@ -68,6 +70,7 @@ return {
                 includeInlayPropertyDeclarationTypeHints = true,
                 includeInlayFunctionLikeReturnTypeHints = true,
                 includeInlayEnumMemberValueHints = true,
+                importModuleSpecifierPreference = "non-relative",
               },
             },
           },
@@ -161,6 +164,26 @@ return {
       setup = {
         clangd = function(_, opts)
           opts.capabilities.offsetEncoding = { "utf-16" }
+        end,
+      },
+    },
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = { eslint = {} },
+      setup = {
+        eslint = function()
+          require("lazyvim.util").on_attach(function(client)
+            if client.name == "eslint" then
+              client.server_capabilities.documentFormattingProvider = true
+            elseif client.name == "tsserver" then
+              client.server_capabilities.documentFormattingProvider = false
+            end
+          end)
+          require("typescript").setup({ server = opts })
+          return true
         end,
       },
     },
