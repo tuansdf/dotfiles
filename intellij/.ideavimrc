@@ -1,12 +1,13 @@
 """ https://www.cyberwizard.io/posts/the-ultimate-ideavim-setup/
 
 set ideajoin
-set scrolloff=10
+set scrolloff=5
 set linenumber
 set showmode
 set showcmd
 set visualbell
 set clipboard+=unnamed
+set number relativenumber
 
 set ignorecase
 set smartcase
@@ -14,6 +15,7 @@ set incsearch
 set hlsearch
 
 let mapleader = " "
+let g:EasyMotion_override_acejump = 0 
 
 set surround
 set highlightedyank
@@ -21,6 +23,7 @@ set sneak
 set nerdtree
 set which-key
 set notimeout
+set easymotion
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
@@ -31,7 +34,7 @@ map <leader>zo :action ExpandAllRegions<CR>
 
 " Window splits
 map <leader>wv <Action>(SplitVertically)
-map <leader>ws <Action>(SplitHorizontally)
+map <leader>wh <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 
@@ -39,6 +42,5 @@ map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
 map <leader>fc <action>(FindInPath)
-map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
