@@ -12,7 +12,7 @@
   "window.menuBarVisibility": "toggle",
   "breadcrumbs.enabled": false,
 
-  // editting
+  // editing
   "editor.fontFamily": "'Jetbrains Mono', 'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
@@ -64,11 +64,11 @@
     },
     {
       "before": ["leader", "w", "k"],
-      "commands": ["workbench.action.splitEditorDown"]
+      "commands": ["workbench.action.splitEditorUp"]
     },
     {
       "before": ["leader", "w", "l"],
-      "commands": ["workbench.action.splitEditorRight"]
+      "commands": ["workbench.action.splitEditorLeft"]
     },
     {
       "before": ["leader", "w", "d"],
